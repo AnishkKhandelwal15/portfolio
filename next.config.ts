@@ -1,10 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  images: {
-    domains: ['res.cloudinary.com'],
-  }
+output: "export",
+trailingSlash: true,
+images: {
+unoptimized: true,
+domains: ["res.cloudinary.com"],
+},
 };
 
 export default nextConfig;

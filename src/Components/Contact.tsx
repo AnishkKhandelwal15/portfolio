@@ -30,7 +30,7 @@ interface FormErrors {
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const BACKEND = process.env.NEXT_PUBLIC_BACKEND_URL;
+const BACKEND_URL = "/api/contact";
 
 const SUBJECT_OPTIONS: { value: SubjectOption; label: string }[] = [
   { value: "hire",      label: "Full-time Position" },
@@ -98,7 +98,7 @@ const ContactSection: React.FC = () => {
 
     setIsSubmitting(true);
     try {
-      const res = await axios.post(`${BACKEND}/contact`, formData);
+      const res = await axios.post(BACKEND_URL, formData);
       if (res.status === 200) {
         toast.success("Message sent successfully");
         setFormData(INITIAL_FORM);
@@ -407,7 +407,7 @@ const ContactSection: React.FC = () => {
               Want to see my full qualifications?
             </p>
             <motion.a
-              href="/ANISHK_KHANDELWAL.pdf\"
+              href="/ANISHK_KHANDELWAL.pdf"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.04 }}
