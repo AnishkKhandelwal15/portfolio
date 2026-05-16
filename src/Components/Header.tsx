@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FiGithub, FiLinkedin, FiMail, FiFileText, FiMenu, FiX } from "react-icons/fi";
 import { useState, useEffect, useRef } from "react";
+import { RESUME_PATH } from "@/lib/site";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -193,7 +194,7 @@ export const Header: React.FC = () => {
 
             {/* Resume button */}
             <motion.a
-              href="/ANISHK_KHANDELWAL.pdf"
+              href={RESUME_PATH}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.04 }}

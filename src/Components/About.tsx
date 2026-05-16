@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   FiCode, FiServer, FiZap, FiTool,
   FiBookOpen, FiBox, FiCloud, FiCpu,
@@ -11,6 +12,7 @@ import {
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import type { IconType } from "react-icons";
+import { RESUME_PATH } from "@/lib/site";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -39,27 +41,27 @@ interface TimelineItem {
 
 const TIMELINE: TimelineItem[] = [
   {
-    title: "Construction ERP",
+    title: "Offline-first ERP Platform",
     role: "Full Stack Developer",
-    tech: ["Electron.js", "React.js", "Redux", "PouchDB", "Node.js"],
+    tech: ["Electron.js", "React.js", "Redux Toolkit", "PouchDB", "Node.js"],
     Icon: FiBox,
   },
   {
-    title: "GEXUS Gaming Platform",
+    title: "GEXUS",
     role: "Full Stack Developer",
-    tech: ["NestJS", "React 19", "PostgreSQL", "MongoDB", "Go"],
+    tech: ["NestJS", "React 19", "PostgreSQL", "MongoDB"],
     Icon: FiZap,
   },
   {
-    title: "Offline-First ERP System",
-    role: "Lead Developer",
-    tech: ["Electron.js", "Redux Toolkit", "Express.js", "PouchDB", "CryptoJS"],
+    title: "Synchora",
+    role: "Full Stack Developer",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Docker", "REST APIs"],
     Icon: FiTool,
   },
   {
-    title: "Advanced IPC Architecture",
-    role: "System Architect",
-    tech: ["Electron IPC", "Worker Threads", "React.js", "Node.js", "TypeScript"],
+    title: "ChatWithPDF",
+    role: "Full Stack Developer",
+    tech: ["Next.js", "TypeScript", "Pinecone", "Gemini", "Drizzle ORM"],
     Icon: FiCode,
   },
 ];
@@ -71,12 +73,12 @@ const SKILL_CATEGORIES: SkillCategoryProps[] = [
     accent: "#00e5ff",
     skills: [
       { name: "React.js",      level: 92 },
+      { name: "Next.js",       level: 90 },
       { name: "Electron.js",   level: 88 },
-      { name: "JavaScript (ES6+)", level: 90 },
       { name: "TypeScript",    level: 87 },
       { name: "Redux Toolkit", level: 85 },
       { name: "Framer Motion", level: 80 },
-      { name: "Vite",          level: 85 },
+      { name: "Tailwind CSS",  level: 85 },
     ],
   },
   {
@@ -88,19 +90,19 @@ const SKILL_CATEGORIES: SkillCategoryProps[] = [
       { name: "PostgreSQL",      level: 85, Icon: SiPostgresql, iconColor: "#336791" },
       { name: "MongoDB",         level: 88 },
       { name: "PouchDB",         level: 87 },
-      { name: "Electron IPC",    level: 86 },
-      { name: "Worker Threads",  level: 84 },
+      { name: "Drizzle ORM",     level: 84 },
+      { name: "Pinecone",        level: 82 },
     ],
   },
   {
-    title: "Security & Tools",
+    title: "Security & AI Tools",
     Icon: FiCloud,
     accent: "#ff375f",
     skills: [
       { name: "AES-256 Encryption", level: 88 },
       { name: "JWT Auth",        level: 90 },
       { name: "Google OAuth",    level: 85 },
-      { name: "Socket.io",       level: 84 },
+      { name: "Google Gemini",   level: 84 },
       { name: "Git / GitHub",    level: 95 },
       { name: "Postman & REST",  level: 92 },
     ],
@@ -199,17 +201,17 @@ const AboutPage: React.FC = () => {
 
       <div
         id="about"
-        className="min-h-screen text-white"
+        className="text-white"
         style={{ background: "#060810", fontFamily: "'DM Sans', sans-serif" }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-20">
 
           {/* ── PROFILE HEADER ───────────────────────────────────────────────── */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="grid lg:grid-cols-3 gap-8 mb-28"
+            className="grid lg:grid-cols-3 gap-8 mb-20"
           >
             {/* Profile card */}
             <div className="relative group col-span-1">
@@ -224,24 +226,37 @@ const AboutPage: React.FC = () => {
                 className="relative rounded-2xl p-7 border border-white/[0.07] h-full"
                 style={{ background: "#0d1117" }}
               >
-                <h1
-                  className="grad-text-about text-3xl font-extrabold mb-2"
-                  style={{ fontFamily: "'Syne', sans-serif" }}
-                >
-                  Anishk Khandelwal
-                </h1>
-                <p
-                  className="text-white/40 text-sm mb-7"
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                >
-                  Full Stack Developer · Backend Architect
-                </p>
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-14 h-14 rounded-2xl overflow-hidden border border-white/[0.08] bg-white/[0.03] shrink-0">
+                    <Image
+                      src="/anishk.png"
+                      alt="Anishk Khandelwal"
+                      width={56}
+                      height={56}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <div>
+                    <h1
+                      className="grad-text-about text-3xl font-extrabold mb-1"
+                      style={{ fontFamily: "'Syne', sans-serif" }}
+                    >
+                      Anishk Khandelwal
+                    </h1>
+                    <p
+                      className="text-white/40 text-sm"
+                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                    >
+                      Full Stack Developer · AI Systems · ERP Engineering
+                    </p>
+                  </div>
+                </div>
 
                 <div className="space-y-3 text-sm">
                   {[
-                    { Icon: FiZap,    color: "#00e5ff", text: "Currently Open to Work" },
-                    { Icon: FiCode,   color: "#bf5af2", text: "3+ Years Coding Experience" },
-                    { Icon: FiServer, color: "#ff375f", text: "2+ Years Professional Experience" },
+                    { Icon: FiZap,    color: "#00e5ff", text: "Open to full-time and freelance work" },
+                    { Icon: FiCode,   color: "#bf5af2", text: "3+ years building production software" },
+                    { Icon: FiServer, color: "#ff375f", text: "1.1+ years of industry experience" },
                   ].map(({ Icon, color, text }) => (
                     <div key={text} className="flex items-center gap-3">
                       <div
@@ -265,9 +280,9 @@ const AboutPage: React.FC = () => {
                 transition={{ delay: 0.2 }}
                 className="text-lg text-white/60 leading-relaxed border-l-2 border-[#00e5ff]/40 pl-5"
               >
-                I build robust, scalable systems that power modern applications. Specialising in
-                backend architectures with Node.js, MongoDB, NestJS, PostgreSQL, and cloud-native
-                solutions — I turn complex requirements into maintainable, high-performance code.
+                I build robust, scalable systems that power modern applications. My focus is on ERP
+                platforms, document intelligence, and backend architectures with Next.js, Node.js,
+                PostgreSQL, and AI-driven retrieval workflows.
               </motion.p>
 
               {/* Current focus */}
@@ -291,8 +306,8 @@ const AboutPage: React.FC = () => {
                   </h3>
                 </div>
                 <p className="text-white/50 text-sm leading-relaxed">
-                  Focused on system design and building scalable systems, while expanding expertise
-                  in AWS (Lambda, S3, EC2) and container orchestration with Docker and Kubernetes.
+                  Focused on shipping full-stack products with clean user experiences, while
+                  expanding deeper into RAG pipelines, embeddings, and production-grade AI search.
                 </p>
               </div>
             </div>
@@ -303,7 +318,7 @@ const AboutPage: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-80px" }}
-            className="mb-28"
+            className="mb-20"
           >
             <SectionLabel>Notable Contributions</SectionLabel>
 
@@ -396,7 +411,7 @@ const AboutPage: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mb-28"
+            className="mb-20"
           >
             <SectionLabel>Technical Arsenal</SectionLabel>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

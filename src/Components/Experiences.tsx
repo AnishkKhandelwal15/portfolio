@@ -58,7 +58,7 @@ const EXPERIENCES: Experience[] = [
 ];
 
 const SUMMARY_STATS = [
-  { label: "Industry Experience", value: "2+ Years" },
+  { label: "Industry Experience", value: "1.1+ Years" },
   { label: "Coding Experience", value: "3+ Years" },
   { label: "Freelance Projects", value: "4+ Completed" },
 ];

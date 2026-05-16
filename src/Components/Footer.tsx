@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiFileText } from "react-icons/fi";
 import type { IconType } from "react-icons";
+import { RESUME_PATH } from "@/lib/site";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -99,6 +100,32 @@ const Footer: React.FC = () => {
 
           {/* Right — socials */}
           <div className="flex items-center gap-2">
+            <motion.a
+              href={RESUME_PATH}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download resume"
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-9 h-9 flex items-center justify-center rounded-xl border transition-all duration-200"
+              style={{
+                borderColor: "rgba(255,255,255,0.06)",
+                color: "rgba(255,255,255,0.35)",
+                background: "rgba(255,255,255,0.03)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = "#00e5ff30";
+                (e.currentTarget as HTMLAnchorElement).style.color = "#00e5ff";
+                (e.currentTarget as HTMLAnchorElement).style.background = "#00e5ff0c";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.06)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.35)";
+                (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.03)";
+              }}
+            >
+              <FiFileText size={15} />
+            </motion.a>
             {SOCIAL_LINKS.map(({ href, Icon, label, accent, external }) => (
               <motion.a
                 key={label}

@@ -1,6 +1,6 @@
 import AboutPage from "@/Components/About";
 import { LandingPage } from "@/Components/LandingPage";
-import ProjectsSection from "@/Components/Projects";
+import ProjectsSection from "@/Components/ProjectsNew";
 import ContactSection from "../Components/Contact";
 import { ExperienceSection } from "@/Components/Experiences";
 

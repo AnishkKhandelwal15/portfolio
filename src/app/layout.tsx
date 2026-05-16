@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Anishk Khandelwal | Portfolio",
-  description: "Anishk's Full-Stack Developer Portfolio",
+  description: "Anishk Khandelwal's portfolio focused on ERP systems, AI products, and full-stack engineering.",
   icons: {
     icon: "/logo.png",
   }

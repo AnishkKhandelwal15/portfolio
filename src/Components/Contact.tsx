@@ -9,6 +9,7 @@ import {
   FiBriefcase, FiUser, FiSend,
 } from "react-icons/fi";
 import { toast } from "react-toastify";
+import { RESUME_PATH } from "@/lib/site";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -407,7 +408,7 @@ const ContactSection: React.FC = () => {
               Want to see my full qualifications?
             </p>
             <motion.a
-              href="/ANISHK_KHANDELWAL.pdf"
+              href={RESUME_PATH}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.04 }}

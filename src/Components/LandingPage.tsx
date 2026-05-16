@@ -14,6 +14,7 @@ import {
 import { FaCode, FaRocket, FaBriefcase, FaAws } from "react-icons/fa";
 import type { IconType } from "react-icons";
 import Image from "next/image";
+import { RESUME_PATH } from "@/lib/site";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -33,7 +34,7 @@ interface TechItem {
 // ─── Static Data ──────────────────────────────────────────────────────────────
 
 const STATS: StatCard[] = [
-  { label: "Industry Experience", value: "2+ Yrs",  Icon: FaBriefcase, accent: "#00e5ff" },
+  { label: "Industry Experience", value: "1.1+ Yrs",  Icon: FaBriefcase, accent: "#00e5ff" },
   { label: "Coding Experience",   value: "3+ Yrs",  Icon: FaCode,      accent: "#bf5af2" },
   { label: "Freelance Projects",  value: "4+ Done", Icon: FaRocket,    accent: "#ff375f" },
 ];
@@ -407,7 +408,7 @@ export const LandingPage: React.FC = () => {
                     Let&apos;s Connect →
                   </motion.a>
                   <motion.a
-                    href="/ANISHK_KHANDELWAL.pdf"
+                    href={RESUME_PATH}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.04 }}
