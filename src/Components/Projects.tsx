@@ -59,7 +59,7 @@ const PROJECTS: Projects = {
         "Built platform serving 200+ concurrent users at 150ms API latency using NestJS, React 19, and Go microservices. Handled 100MB+ secure file uploads with AES-256 encryption, processing 500+ daily uploads at 99.5% success rate. Designed hybrid DB architecture (PostgreSQL + MongoDB) syncing 50,000+ records via Supabase with Prisma ORM.",
       tech: ["NestJS", "React 19", "Go", "PostgreSQL", "MongoDB", "Prisma ORM", "Supabase", "AES-256"],
       role: "Full Stack Developer",
-      date: "2025",
+      date: "2026",
       featured: true,
     },
   ],

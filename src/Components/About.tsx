@@ -230,7 +230,7 @@ const AboutPage: React.FC = () => {
                   <div className="w-14 h-14 rounded-2xl overflow-hidden border border-white/[0.08] bg-white/[0.03] shrink-0">
                     <Image
                       src="/anishk.png"
-                      alt="Anishk Khandelwal"
+                      alt="Anishk"
                       width={56}
                       height={56}
                       className="w-full h-full object-cover object-top"
@@ -241,13 +241,13 @@ const AboutPage: React.FC = () => {
                       className="grad-text-about text-3xl font-extrabold mb-1"
                       style={{ fontFamily: "'Syne', sans-serif" }}
                     >
-                      Anishk Khandelwal
+                      Anishk
                     </h1>
                     <p
                       className="text-white/40 text-sm"
                       style={{ fontFamily: "'JetBrains Mono', monospace" }}
                     >
-                      Full Stack Developer · AI Systems · ERP Engineering
+                      Full Stack Developer 
                     </p>
                   </div>
                 </div>
@@ -255,7 +255,7 @@ const AboutPage: React.FC = () => {
                 <div className="space-y-3 text-sm">
                   {[
                     { Icon: FiZap,    color: "#00e5ff", text: "Open to full-time and freelance work" },
-                    { Icon: FiCode,   color: "#bf5af2", text: "3+ years building production software" },
+                    { Icon: FiCode,   color: "#bf5af2", text: "1.1+ years building production software" },
                     { Icon: FiServer, color: "#ff375f", text: "1.1+ years of industry experience" },
                   ].map(({ Icon, color, text }) => (
                     <div key={text} className="flex items-center gap-3">
