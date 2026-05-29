@@ -13,6 +13,7 @@ interface ProjectCardData {
   role: string;
   badge: string;
   image: string;
+  link?: string;
 }
 
 const PROJECTS: ProjectCardData[] = [
@@ -37,6 +38,7 @@ const PROJECTS: ProjectCardData[] = [
     role: "Full Stack Developer",
     badge: "scalable platform",
     image: "/projects/gexus.svg",
+    link: "https://gexus.tech/",
   },
   {
     title: "Synchora",
@@ -48,6 +50,7 @@ const PROJECTS: ProjectCardData[] = [
     role: "Full Stack Developer",
     badge: "sync engine",
     image: "/projects/synchora.svg",
+    link: "https://syncora-lovat.vercel.app/login",
   },
   {
     title: "ChatWithPDF",
@@ -59,6 +62,7 @@ const PROJECTS: ProjectCardData[] = [
     role: "Full Stack Developer",
     badge: "AI document search",
     image: "/projects/chatpdf.svg",
+    link: "http://doc-whisper.vercel.app/",
   },
 ];
 
@@ -69,14 +73,21 @@ const PROJECT_STATS = [
 ];
 
 function ProjectCard({ project, index }: { project: ProjectCardData; index: number }) {
+  const handleCardClick = () => {
+    if (project.link) {
+      window.open(project.link, "_blank");
+    }
+  };
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.45, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative flex flex-col overflow-hidden rounded-[28px] border border-white/[0.06]"
+      className={`group relative flex flex-col overflow-hidden rounded-[28px] border border-white/[0.06] ${project.link ? "cursor-pointer" : ""}`}
       style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015))" }}
+      onClick={handleCardClick}
     >
       <div
         className="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-500 group-hover:opacity-100"
